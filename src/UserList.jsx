@@ -8,7 +8,7 @@ function UserList() {
 
   return (
     <div>
-      <h1>User List</h1>
+      <h1>List of User</h1>
 
       <div className="fetch-button">
         <button onClick={() => dispatch(fetchUsers())}>Fetch Users</button>

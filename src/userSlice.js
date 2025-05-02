@@ -1,18 +1,15 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
 import axios from 'axios';
 
-// Modified to limit to 15 users
 export const fetchUsers = createAsyncThunk(
   'users/fetchUsers',
   async (_, { rejectWithValue }) => {
     try {
-      // Simulated loading delay
+
       await new Promise(resolve => setTimeout(resolve, 1000));
       
-      // Fetch users from API (but only use 15 of them)
       const response = await axios.get('https://jsonplaceholder.typicode.com/users');
       
-      // Create a set of 15 users with consistent data
       const users = [
         { id: 1, name: 'Amarillo, Ralph Richmond', email: 'ralph@gmail.com' },
         { id: 2, name: 'Ancaja, John Louise', email: 'louise@gmail' },
